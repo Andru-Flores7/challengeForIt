@@ -35,5 +35,6 @@ const updateTask = (req ,res) => {
     if (taskIndex === -1) {
         return res.status(404).json({ error: "Tarea no encontrada" });
     }
-
+    task[taskIndex] = { ...task[taskIndex], title, description, completed };
+    res.json(task[taskIndex]);
 }
