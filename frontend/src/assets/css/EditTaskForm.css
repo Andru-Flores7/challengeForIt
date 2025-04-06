@@ -1,0 +1,135 @@
+Edit {
+  background: #485563; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #29323c,
+    #485563
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #29323c,
+    #485563
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  display: flex;
+  justify-content: center;
+}
+.Edit h1 {
+  color: white;
+  background: #485563; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #29323c,
+    #485563
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #29323c,
+    #485563
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+label {
+  color: white;
+  display: block;
+}
+
+.containerEditForm {
+  height: 100%;
+  padding: 12%;
+}
+.containerEditForm form {
+    display: flex;
+    flex-direction: column;
+  border-radius: 4px;
+  padding: 1%;
+  height: 100%;
+  background: #360033; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0b8793,
+    #360033
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0b8793,
+    #360033
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.containerEditForm form div {
+  margin-top: 10%;
+}
+.containerEditForm form textarea {
+  border-radius: 10%;
+}
+.containerEditForm form button {
+  margin-top: 10%;
+}
+
+@media (min-width: 577px)  {
+  /* Estilos para tablets */
+  .Edit {
+    background: #485563; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #29323c,
+      #485563
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #29323c,
+      #485563
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    display: flex;
+    justify-content: center;
+  }
+  .Edit h1 {
+    color: white;
+    background: #485563; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #29323c,
+      #485563
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #29323c,
+      #485563
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+ 
+  
+  .containerEditForm {
+    height: 100%;
+    padding: 10%;
+  }
+  .containerEditForm form {
+    border-radius: 4px;
+   
+    height: max-content;
+    background: #360033; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #0b8793,
+      #360033
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #0b8793,
+      #360033
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  .containerEditForm form div {
+ margin-top: 3%;
+  }
+  .containerEditForm form textarea {
+    border-radius: 10%;
+  }
+  .containerEditForm form button {
+    margin-top: 10%;
+  }
+}
+
+@media (min-width: 1025px) {
+  /* Estilos para escritorio */
+}

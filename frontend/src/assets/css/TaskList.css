@@ -1,0 +1,27 @@
+.list {
+  background: #780206;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+.list h1{
+  color: white;
+}
+
+
+
+@media (min-width: 577px) and (max-width: 1024px) {
+    /* Estilos para tablets */
+  }
+
+
+
+
+
+
+
+
+  @media (min-width: 1025px) {
+    /* Estilos para escritorio */
+  }
+  
