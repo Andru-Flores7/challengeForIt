@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Routes, Route , Link } from "react-router-dom";
 import TaskList from "./components/TaskList";
 import EditTaskForm from "./components/EditTaskForm";
+import Home from "./pages/Home";
 import CreateTaskForm from "./components/CreateTaskForm";
 import "./assets/css/App.css";
 function App() {
@@ -14,9 +15,10 @@ function App() {
   return (
    
       <Routes>
-        <Route path="/" element={<TaskList />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/tasks" element={<TaskList />} />
         <Route path="/create" element={<CreateTaskForm  onTaskCreated={handleTaskCreated} />} />
-        <Route path="/edit" element={<EditTaskForm />} />
+        <Route path="/edit/:id" element={<EditTaskForm />} />
       </Routes>
     
   );

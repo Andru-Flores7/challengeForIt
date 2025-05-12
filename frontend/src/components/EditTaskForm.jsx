@@ -1,29 +1,81 @@
 // src/components/TaskForm.js
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams , useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../assets/css/EditTaskForm.css";
 
-const TaskForm = () => {
+const EditTaskForm = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [completed, setCompleted] = useState(false);  
+
+  useEffect (()=> {
+    axios
+      .get(`http://localhost:3000/Tasks/${id}`)
+      .then((response) => {
+       const { title, description, completed } = response.data;
+       setTitle(title);
+       setDescription(description);
+       setCompleted(completed);
+      })
+
+      .catch((error) => {
+        console.log("Error al obtener la tarea", error);
+      });
+  } , [id]);
+
+  //funcion para enviar la tarea editada 
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.put(`http://localhost:3000/Tasks/${id}`, {
+        title,
+        description,
+        completed,
+      });
+      console.log("Tarea actualizada");
+      
+      navigate("/");
+    } catch (error) {
+      console.log("Error al actualizar la tarea", error);
+    }
+  }
   return (
     <> 
       <div className="Edit">
         <h1>Formulario de Edicion</h1>
       </div>
       <div className="containerEditForm">
-        <form>
+        <form onSubmit={handleSubmit} className="editForm">
           <div>
-            <label>Tarea</label>
+            <label htmlFor="title">Tarea</label>
             <input
               type="text"
-      
+              id="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div>
             <label>Descripcion</label>
-            <textarea type="password" />
+            <textarea  id="description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)} />
           </div>
+          <div>
+          <label htmlFor="completed">Completado</label>
+        <input
+          type="text"
+          id="completed"
+          checked={completed}
+          onChange={(e) => setCompleted(e.target.checked)}
+        />
+        </div>
 
           <button type="submit" className="btn btn-primary">
             Guardar 
@@ -34,4 +86,4 @@ const TaskForm = () => {
   );
 };
 
-export default TaskForm;
+export default EditTaskForm;
