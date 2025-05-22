@@ -1,0 +1,25 @@
+/* Modal de advertencia para eliminar tarea */
+.modal-warning-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-warning {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  text-align: center;
+}
+.modal-warning h2 {
+  color: #b92b27;
+  margin-bottom: 1rem;
+}
+.modal-warning button {
+  margin: 0 0.5rem;
+  min-width: 90px;
+}

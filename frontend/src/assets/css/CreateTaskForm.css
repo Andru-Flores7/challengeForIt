@@ -1,16 +1,5 @@
 .create {
-  background: #485563; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #29323c,
-    #485563
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #29323c,
-    #485563
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: linear-gradient(to right, #b92b27, #1565c0);
   display: flex;
   justify-content: center;
 }
@@ -38,34 +27,73 @@ label {
   padding: 12%;
 }
 .containerCreateForm form {
-    display: flex;
-    flex-direction: column;
-  border-radius: 4px;
-  padding: 1%;
-  height: 100%;
-  background: #360033; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #0b8793,
-    #360033
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #0b8793,
-    #360033
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 2rem 2.5rem;
+  background: #360033;
+  background: linear-gradient(to right, #0b8793, #360033);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  max-width: 420px;
+  margin: 0 auto;
 }
 .containerCreateForm form div {
-  margin-top: 10%;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.containerCreateForm form textarea {
-  border-radius: 10%;
+.containerCreateForm label {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+.containerCreateForm input[type='text'],
+.containerCreateForm textarea,
+.containerCreateForm select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  background: #f7f7f7;
+  color: #222;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.2s;
+}
+.containerCreateForm input[type='text']:focus,
+.containerCreateForm textarea:focus,
+.containerCreateForm select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #1565c0;
+}
+.containerCreateForm textarea {
+  min-height: 80px;
+  resize: vertical;
 }
 .containerCreateForm form button {
   margin-top: 10%;
 }
+.btnCreate {
+  margin-top: 2rem;
+  padding: 0.7rem 2.2rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(to right, #b92b27, #1565c0);
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.btnCreate:hover {
+  background: linear-gradient(to right, #1565c0, #b92b27);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
 
-@media (min-width: 577px)  {
+@media (min-width: 577px) {
   /* Estilos para tablets */
   .create {
     background: #485563; /* fallback for old browsers */
@@ -79,7 +107,7 @@ label {
       #29323c,
       #485563
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+
     display: flex;
     justify-content: center;
   }
@@ -97,15 +125,14 @@ label {
       #485563
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
- 
-  
+
   .containerCreateForm {
     height: 100%;
     padding: 10%;
   }
   .containerCreateForm form {
     border-radius: 4px;
-   
+
     height: max-content;
     background: #360033; /* fallback for old browsers */
     background: -webkit-linear-gradient(
@@ -120,7 +147,7 @@ label {
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   .containerCreateForm form div {
- margin-top: 3%;
+    margin-top: 3%;
   }
   .containerCreateForm form textarea {
     border-radius: 10%;

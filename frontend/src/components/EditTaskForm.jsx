@@ -8,7 +8,6 @@ import "../assets/css/EditTaskForm.css";
 const EditTaskForm = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [completed, setCompleted] = useState(false);  
@@ -28,8 +27,6 @@ const EditTaskForm = () => {
       });
   } , [id]);
 
-  //funcion para enviar la tarea editada 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -48,7 +45,7 @@ const EditTaskForm = () => {
   return (
     <> 
       <div className="Edit">
-        <h1>Formulario de Edicion</h1>
+        <h1>Formulario de Edición</h1>
       </div>
       <div className="containerEditForm">
         <form onSubmit={handleSubmit} className="editForm">
@@ -64,19 +61,16 @@ const EditTaskForm = () => {
           <div>
             <label>Descripcion</label>
             <textarea  id="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)} />
+              value={description}
+              onChange={(e) => setDescription(e.target.value)} />
           </div>
           <div>
-          <label htmlFor="completed">Completado</label>
-        <input
-          type="text"
-          id="completed"
-          checked={completed}
-          onChange={(e) => setCompleted(e.target.checked)}
-        />
-        </div>
-
+            <label htmlFor="completed">Estado</label>
+            <select id="completed" value={completed ? "completado" : "incompleto"} onChange={e => setCompleted(e.target.value === "completado") }>
+              <option value="incompleto">Incompleto</option>
+              <option value="completado">Completado</option>
+            </select>
+          </div>
           <button type="submit" className="btn btn-primary">
             Guardar 
           </button>

@@ -1,12 +1,15 @@
 // src/components/TaskList.js
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
+import ModalWarning from "./ModalWarning";
 import "../assets/css/TaskList.css";
 
 const TaskList = ({ updated }) => {
   const [tasks, setTasks] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [taskToDelete, setTaskToDelete] = useState(null);
   //ESto se ejecuta una vez al montar el elemento
   useEffect(() => {
     //Llamada al back
@@ -19,8 +22,32 @@ const TaskList = ({ updated }) => {
         console.log("Error al obtener las tareas", error);
       });
   }, [updated]); //actualiza la lista de tareas
+  // Función para eliminar tarea con confirmación
+  const handleDeleteClick = (id) => {
+    setTaskToDelete(id);
+    setShowModal(true);
+  };
+
+  const handleConfirmDelete = async () => {
+    if (!taskToDelete) return;
+    try {
+      await axios.delete(`http://localhost:3000/Tasks/${taskToDelete}`);
+      setTasks(tasks.filter((task) => task.id !== taskToDelete));
+    } catch (error) {
+      console.log("Error al eliminar la tarea", error);
+    }
+    setShowModal(false);
+    setTaskToDelete(null);
+  };
+
+  const handleCancelDelete = () => {
+    setShowModal(false);
+    setTaskToDelete(null);
+  };
+
   return (
     <>
+      <ModalWarning show={showModal} onConfirm={handleConfirmDelete} onCancel={handleCancelDelete} />
       <div className="list">
         <h1>Lista de Tareas</h1>
       </div>
@@ -30,10 +57,10 @@ const TaskList = ({ updated }) => {
             <h3>{task.title}</h3>
             <p>{task.description}</p>
             <div className="btns">
-            <button className="btn btn-danger">Eliminar</button>
-            <Link to={`/edit/${task.id}`}>
-              <button className="btn btn-success">Editar</button>
-            </Link>
+              <button className="btn btn-danger" onClick={() => handleDeleteClick(task.id)}>Eliminar</button>
+              <Link to={`/edit/${task.id}`}>
+                <button className="btn btn-success">Editar</button>
+              </Link>
             </div>
           </li>
         ))}
