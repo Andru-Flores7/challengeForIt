@@ -1,4 +1,4 @@
-Edit {
+.Edit {
   background: linear-gradient(
     to right,
     #b92b27,
@@ -10,8 +10,6 @@ Edit {
 }
 .Edit h1 {
   color: white;
- 
- 
 }
 label {
   color: white;
@@ -23,49 +21,70 @@ label {
   padding: 12%;
 }
 .containerEditForm form {
-  display: flex;
-  flex-direction: column;
-  border-radius: 4px;
-  padding: 1%;
-  height: 100%;
-  background: #360033; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #0b8793,
-    #360033
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(135deg, #111 60%, #fff 100%);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 2.5rem 2rem;
+  max-width: 440px;
+  margin: 0 auto;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+}
+
+.containerEditForm label {
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.containerEditForm input[type="text"],
+.containerEditForm textarea,
+.containerEditForm select {
   background: linear-gradient(
-    to right,
-    #0b8793,
-    #360033
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    135deg,
+    rgba(0, 0, 0, 0.85) 60%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  font-size: 1em;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.2s, background 0.2s;
 }
-.containerEditForm form div {
-  margin-top: 10%;
+
+.containerEditForm input[type="text"]:focus,
+.containerEditForm textarea:focus,
+.containerEditForm select:focus {
+  outline: none;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 1) 60%,
+    rgba(255, 255, 255, 0.18) 100%
+  );
+  box-shadow: 0 0 0 2px #1565c0;
 }
-.containerEditForm form textarea {
-  border-radius: 10%;
+
+.containerEditForm textarea {
+  min-height: 80px;
+  resize: vertical;
 }
+
 .containerEditForm form button {
-  margin-top: 10%;
+  margin-top: 1.5rem;
 }
 
 @media (min-width: 577px) {
   /* Estilos para tablets */
   .Edit {
-   
-  background: linear-gradient(
-    to right,
-    #b92b27,
-    #1565c0
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    display: flex;
-    justify-content: center;
+ 
   }
   .Edit h1 {
     color: white;
-   
   }
 
   .containerEditForm {
@@ -74,20 +93,9 @@ label {
   }
   .containerEditForm form {
     border-radius: 4px;
-
     height: max-content;
-    background: #360033; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #0b8793,
-      #360033
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #0b8793,
-      #360033
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
+
   .containerEditForm form div {
     margin-top: 3%;
   }
@@ -99,6 +107,10 @@ label {
   }
 }
 
-@media (min-width: 1025px) {
-  /* Estilos para escritorio */
+@media (max-width: 600px) {
+  .containerEditForm form {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+    border-radius: 12px;
+  }
 }

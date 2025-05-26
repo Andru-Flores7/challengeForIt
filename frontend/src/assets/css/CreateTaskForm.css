@@ -17,15 +17,15 @@ label {
   height: 100%;
   padding: 12%;
 }
-.containerCreateForm form,
-.containerCreateForm .unified-form,
-.containerEditForm form {
-  background: rgba(20, 20, 20, 0.82); /* Fondo negro translúcido */
-  border-radius: 8px;
-  padding: 2rem 2.5rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
-  max-width: 420px;
+.containerCreateForm form {
+  background: linear-gradient(135deg, #111 60%, #fff 100%);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  padding: 2.5rem 2rem;
+  max-width: 440px;
   margin: 0 auto;
+  border: 1.5px solid rgba(255,255,255,0.08);
+  width: 100%;
 }
 .containerCreateForm form div {
   margin-top: 1.5rem;
@@ -35,35 +35,40 @@ label {
 }
 .containerCreateForm label {
   color: #fff;
+  font-size: 1.1em;
   font-weight: 600;
   margin-bottom: 0.5rem;
   letter-spacing: 0.5px;
 }
 
-.containerEditForm select {
-  width: 100%;
-  padding: 0.7rem 1rem;
-  border-radius: 6px;
-  border: none;
-  font-size: 1rem;
-  margin-bottom: 0.2rem;
-  background: #f7f7f7;
-  color: #222;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
-  transition: box-shadow 0.2s;
+.containerCreateForm input[type="text"],
+.containerCreateForm textarea,
+.containerCreateForm select {
+  background: linear-gradient(135deg, rgba(0,0,0,0.85) 60%, rgba(255,255,255,0.10) 100%);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  font-size: 1em;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s, background 0.2s;
 }
 
-.containerEditForm select:focus {
+.containerCreateForm input[type="text"]:focus,
+.containerCreateForm textarea:focus,
+.containerCreateForm select:focus {
   outline: none;
+  background: linear-gradient(135deg, rgba(0,0,0,1) 60%, rgba(255,255,255,0.18) 100%);
   box-shadow: 0 0 0 2px #1565c0;
 }
-.containerCreateForm textarea,
-.containerEditForm textarea {
+
+.containerCreateForm textarea {
   min-height: 80px;
   resize: vertical;
 }
 .containerCreateForm form button {
-  margin-top: 10%;
+  margin-top: 1.5rem;
 }
 .btnCreate {
   margin-top: 2rem;
@@ -126,6 +131,10 @@ label {
   }
 }
 
-@media (min-width: 1025px) {
-  /* Estilos para escritorio */
+@media (max-width: 600px) {
+  .containerCreateForm form {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+    border-radius: 12px;
+  }
 }
