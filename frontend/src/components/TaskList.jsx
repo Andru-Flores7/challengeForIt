@@ -56,6 +56,9 @@ const TaskList = ({ updated }) => {
           <li className="list-group-item list-group-item-primary listli" key={task.id}>
             <h3>{task.title}</h3>
             <p>{task.description}</p>
+            <span style={{ fontWeight: 600, color: task.completed ? '#00e676' : '#ff1744' }}>
+              Estado: {task.completed ? 'Completado' : 'Incompleto'}
+            </span>
             <div className="btns">
               <button className="btn btn-danger" onClick={() => handleDeleteClick(task.id)}>Eliminar</button>
               <Link to={`/edit/${task.id}`}>

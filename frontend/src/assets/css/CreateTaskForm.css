@@ -5,17 +5,8 @@
 }
 .create h1 {
   color: white;
-  background: #485563; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #29323c,
-    #485563
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #29323c,
-    #485563
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
+ 
 }
 label {
   color: white;
@@ -26,13 +17,12 @@ label {
   height: 100%;
   padding: 12%;
 }
-.containerCreateForm form {
-  display: flex;
-  flex-direction: column;
+.containerCreateForm form,
+.containerCreateForm .unified-form,
+.containerEditForm form {
+  background: rgba(20, 20, 20, 0.82); /* Fondo negro translúcido */
   border-radius: 8px;
   padding: 2rem 2.5rem;
-  background: #360033;
-  background: linear-gradient(to right, #0b8793, #360033);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
   max-width: 420px;
   margin: 0 auto;
@@ -51,7 +41,10 @@ label {
 }
 .containerCreateForm input[type='text'],
 .containerCreateForm textarea,
-.containerCreateForm select {
+.containerCreateForm select,
+.containerEditForm input[type='text'],
+.containerEditForm textarea,
+.containerEditForm select {
   width: 100%;
   padding: 0.7rem 1rem;
   border-radius: 6px;
@@ -65,11 +58,15 @@ label {
 }
 .containerCreateForm input[type='text']:focus,
 .containerCreateForm textarea:focus,
-.containerCreateForm select:focus {
+.containerCreateForm select:focus,
+.containerEditForm input[type='text']:focus,
+.containerEditForm textarea:focus,
+.containerEditForm select:focus {
   outline: none;
   box-shadow: 0 0 0 2px #1565c0;
 }
-.containerCreateForm textarea {
+.containerCreateForm textarea,
+.containerEditForm textarea {
   min-height: 80px;
   resize: vertical;
 }
@@ -96,35 +93,15 @@ label {
 @media (min-width: 577px) {
   /* Estilos para tablets */
   .create {
-    background: #485563; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #29323c,
-      #485563
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #29323c,
-      #485563
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  
+  
     display: flex;
     justify-content: center;
   }
   .create h1 {
     color: white;
-    background: #485563; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #29323c,
-      #485563
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #29323c,
-      #485563
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
+  
+    font-size: 2.5em;}
 
   .containerCreateForm {
     height: 100%;

@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import "../assets/css/CreateTaskForm.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 const CreateTaskForm = ({ onTaskCreated}) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState(""); 
@@ -22,7 +22,7 @@ const CreateTaskForm = ({ onTaskCreated}) => {
       setTitle("");//limpiar los campos
       setDescription("");//limpiar los campos
       setCompleted(false);
-      navigate("/"); 
+      navigate("/tasks"); 
     } catch (error) {
       console.error ("Error al crear la tarea" , error); 
   }
@@ -30,11 +30,13 @@ const CreateTaskForm = ({ onTaskCreated}) => {
   }
   return (
     <>
-      <div className="create">
-        <h1>Crear Nueva Tarea</h1>
+      <div className="create" style={{textDecoration: 'none' }}>
+        <Link to="/tasks" style={{ textDecoration: 'none' }}>
+          <h1 >Crear Nueva Tarea</h1>
+        </Link>
       </div>
       <div className="containerCreateForm">
-        <form onSubmit={handleSubmit}>
+        <form className="unified-form" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="title">Tarea</label>
             <input type="text" id="title" value={title} onChange={(e) => setTitle(e.target.value)} />

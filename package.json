@@ -1,0 +1,13 @@
+{
+  "name": "challenge-root",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run start --prefix backend\"",
+    "dev:front": "npm run dev --prefix frontend",
+    "dev:back": "npm run start --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

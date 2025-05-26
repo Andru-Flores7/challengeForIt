@@ -1,7 +1,7 @@
 // src/components/TaskForm.js
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams , useNavigate } from "react-router-dom";
+import { useParams , useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "../assets/css/EditTaskForm.css";
 
@@ -37,7 +37,7 @@ const EditTaskForm = () => {
       });
       console.log("Tarea actualizada");
       
-      navigate("/");
+      navigate("/tasks");
     } catch (error) {
       console.log("Error al actualizar la tarea", error);
     }
@@ -45,7 +45,10 @@ const EditTaskForm = () => {
   return (
     <> 
       <div className="Edit">
-        <h1>Formulario de Edición</h1>
+        <Link to="/tasks" style={{ textDecoration: 'none' }}>
+          <h1>Formulario de Edición</h1>
+        </Link>
+       
       </div>
       <div className="containerEditForm">
         <form onSubmit={handleSubmit} className="editForm">

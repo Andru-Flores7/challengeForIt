@@ -1,5 +1,5 @@
 body {
-  background-color: #2C2C2C;
+    background-image: url("../public/dibujo.svg");
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -50,4 +50,51 @@ body {
 
 .read-the-docs {
   color: #888;
+}
+
+.btn,
+.btnCreate,
+.btn-primary,
+.btn-outline-primary,
+.btn-danger,
+.btn-success,
+.btn-secondary {
+  background: linear-gradient(to right, #b92b27, #1565c0);
+  color: #fff !important;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 0.7em 2em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.btn:hover,
+.btnCreate:hover,
+.btn-primary:hover,
+.btn-outline-primary:hover,
+.btn-danger:hover,
+.btn-success:hover,
+.btn-secondary:hover {
+  background: linear-gradient(to right, #1565c0, #b92b27);
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+.btn-danger {
+  background: linear-gradient(to right, #b92b27, #ff1744);
+}
+.btn-danger:hover {
+  background: linear-gradient(to right, #ff1744, #b92b27);
+}
+.btn-success {
+  background: linear-gradient(to right, #1565c0, #00e676);
+}
+.btn-success:hover {
+  background: linear-gradient(to right, #00e676, #1565c0);
+}
+.btn-secondary {
+  background: #485563;
+}
+.btn-secondary:hover {
+  background: #29323c;
 }
