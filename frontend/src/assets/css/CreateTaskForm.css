@@ -39,11 +39,7 @@ label {
   margin-bottom: 0.5rem;
   letter-spacing: 0.5px;
 }
-.containerCreateForm input[type='text'],
-.containerCreateForm textarea,
-.containerCreateForm select,
-.containerEditForm input[type='text'],
-.containerEditForm textarea,
+
 .containerEditForm select {
   width: 100%;
   padding: 0.7rem 1rem;
@@ -56,11 +52,7 @@ label {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
   transition: box-shadow 0.2s;
 }
-.containerCreateForm input[type='text']:focus,
-.containerCreateForm textarea:focus,
-.containerCreateForm select:focus,
-.containerEditForm input[type='text']:focus,
-.containerEditForm textarea:focus,
+
 .containerEditForm select:focus {
   outline: none;
   box-shadow: 0 0 0 2px #1565c0;
